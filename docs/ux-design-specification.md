@@ -82,19 +82,163 @@ Instead of treating "open-source code" as a technical requirement, position it a
 
 ---
 
-## Core User Experience
+## Core User Experience Definition
 
 ### Defining Experience
 
-The core user experience for Mental is fundamentally simple: **join a poker game, play normally, verify fairness afterward**.
+**The Two-Moment Loop: Normal Poker → Proof Verification**
 
-Players open the Mental client and see a **lobby with available tables**. They select a table, join with their name, receive their hole cards, and play standard heads-up No Limit Hold'em. From the player's perspective, it's a typical poker game. What's invisible to them is that every action—shuffle, bet verification, card state—uses the mental poker cryptographic protocol. The server and client communicate cryptographically on every move, but this communication is seamless and transparent to the player.
+Mental's defining experience isn't a single moment—it's the seamless transition between two states that together create the unique value proposition:
 
-After the game ends, players can download their complete hand history at any time—immediately or days later. That hand history contains embedded cryptographic proofs that mathematically demonstrate the shuffle was fair, cards were private, and nothing was manipulated.
+**Moment 1: Play Normal Poker**
+Players experience standard heads-up No Limit Hold'em gameplay. The game is responsive, natural, and engaging. From their perspective, it's just poker. They see hole cards, make betting decisions, watch community cards develop, and complete the hand. No indication of cryptographic overhead, no delays, no strange UI cues. Just poker.
 
-The experience follows this loop: **Lobby → Join → Play → Download Proof → Verify (optional)**.
+The mental poker protocol works invisibly underneath, securing cards and verifying shuffles through cryptographic communication between client and server. But the player doesn't need to understand or even notice this complexity.
 
-### Platform Strategy
+**Moment 2: Get Proof Immediately**
+The hand ends, cards are revealed at showdown, and the system immediately presents the hand history with embedded cryptographic proofs. The proof is accessible—downloadable without friction, always available for retrieval later, owned by the player, not locked behind the platform.
+
+The player can verify the proof themselves (or share it with others to verify), and see mathematical evidence that:
+- The shuffle was fair and verifiable
+- Their cards were genuinely private
+- Nothing was manipulated
+
+**The Defining Success Metric:**
+If we achieve this loop flawlessly—responsive normal poker + immediately-available proof—then everything else (lobby, operators, auditors) works because the core value is delivered.
+
+### User Mental Model
+
+**Alex (Casual Player) Mental Model:**
+- Expectation: "I want to play poker and know for certain I wasn't cheated"
+- Current behavior: Plays on regulated platforms, but inherently skeptical of fairness claims
+- Mental model before using Mental: "Fairness is claimed by the operator, and I have to trust them"
+- Mental model after using Mental: "I have mathematical proof. I own my proof. I verified it myself"
+
+The mental model shift is crucial: from trust-based to proof-based thinking.
+
+**Jordan (Auditor) Mental Model:**
+- Expectation: "I want to audit games across time and validate fairness independently"
+- Current behavior: Downloads hand histories, analyzes them with scripts, spot-checks patterns
+- Mental model: "If I can verify multiple games and they're all mathematically fair, I have authority to recommend this system"
+
+**Sam (Operator) Mental Model:**
+- Expectation: "I want to run a poker server that obviously can't cheat"
+- Current behavior: Deploys servers, monitors logs, handles player requests
+- Mental model: "I'm running code that's mathematically proven to be fair. Players can verify it. I don't have to convince anyone to trust me"
+
+**Maya (Researcher) Mental Model:**
+- Expectation: "I want to audit the protocol and validate the cryptographic implementation"
+- Current behavior: Reviews open-source code, analyzes proofs, publishes findings
+- Mental model: "This is a legitimate cryptographic implementation. I can validate it. I can become the authority on this system's fairness"
+
+### Success Criteria for Core Experience
+
+**Gameplay Success:**
+- ✅ Player action → Server response within 500ms (including cryptographic overhead)
+- ✅ Game feels as responsive as traditional online poker platforms
+- ✅ Zero cryptographic delays visible during betting rounds
+- ✅ Player can complete a full hand (pre-flop through showdown) without noticing computational work
+
+**Proof Success:**
+- ✅ Hand history with proofs generated within 1 second of showdown
+- ✅ Proof downloadable with single click (no authentication required)
+- ✅ Hand history persistent and retrievable indefinitely
+- ✅ Proof format matches mental poker literature standards (externally verifiable)
+
+**Trust Success:**
+- ✅ Player can independently verify proof without platform verification
+- ✅ Proof can be shared with cryptographer/researcher who validates it independently
+- ✅ Player feels confident: "I have mathematical evidence I wasn't cheated"
+- ✅ No lingering skepticism or doubt about fairness
+
+### Novel UX Pattern
+
+Mental's core experience **does not use an established poker platform pattern**—instead, it combines familiar poker UX with a novel cryptographic transparency moment.
+
+**What's Familiar:**
+- Lobby with table list (Chess.com, Lichess, GGPoker pattern)
+- Heads-up poker gameplay (standard Hold'em rules and UI)
+- Showdown revealing cards (traditional poker moment)
+- Hand history download (some platforms offer this)
+
+**What's Novel:**
+- **Proof as immediate deliverable** rather than historical reference
+- **Proof as verifiable evidence** rather than platform claim
+- **Cryptographic transparency** replacing operator reputation as trust signal
+- **Mathematical certainty** instead of regulatory assurance
+
+The novel aspect isn't the interaction itself—it's the *meaning* of the interaction. Getting your hand history isn't new. Having cryptographic proof embedded in it that you can verify independently *is* new.
+
+**User Education Needed:**
+Players don't need to understand zero-knowledge proofs to use Mental. They need to understand one simple concept: "Your hand history includes mathematical proof the game was fair. You can verify it yourself or ask someone else to verify it for you."
+
+### Experience Mechanics: Normal Poker + Proof Loop
+
+**Part 1: Lobby & Join**
+
+1. **Initiation:** Player opens Mental client, sees lobby
+2. **Interaction:** Player views available tables, clicks "Join" on a table
+3. **Feedback:** Player is immediately seated, sees hole cards, sees opponent name
+4. **Completion:** Hand begins; player is ready to act
+
+**Expectation:** <3 clicks from landing page to seated at a table
+
+---
+
+**Part 2: Gameplay (Per-Hand)**
+
+1. **Initiation:** Hand begins with blinds posted
+2. **Interaction:**
+   - Player sees their hole cards
+   - Player makes betting decisions (fold/check/call/bet/raise)
+   - Server processes action, broadcasts to opponent within 500ms
+   - Community cards appear after each betting round
+   - Hidden cryptographic communication: mental poker protocol securing card state
+3. **Feedback:**
+   - Immediate visual feedback for player actions
+   - Pot updates in real-time
+   - Current action indicator shows whose turn it is
+   - Community cards appear smoothly
+4. **Completion:** Final betting round concludes; cards are revealed at showdown
+
+**Expectation:** Game rhythm feels normal; no noticeable cryptographic delays
+
+---
+
+**Part 3: Proof Moment (Game Conclusion)**
+
+1. **Initiation:** Showdown completes; both players' cards revealed
+2. **Interaction:**
+   - Hand history page appears automatically
+   - Proof is generated and embedded in hand history (happens within 1 second)
+   - "Download Hand History" button becomes available
+   - Player clicks download
+3. **Feedback:**
+   - Visual confirmation: "Your hand history is ready"
+   - Download completes; file is in player's downloads folder
+   - Proof is visible in hand history file (JSON showing cryptographic data)
+4. **Completion:** Player has their proof; can verify, share, or store
+
+**Expectation:** Hand history is immediately accessible; proof feels like a natural conclusion to the game
+
+---
+
+**Part 4: Verification (Optional, Ongoing)**
+
+1. **Initiation:** Player downloads hand history (immediately after game or anytime later)
+2. **Interaction:**
+   - Player opens hand history file locally
+   - Proof is visible in human-readable form (or downloadable as JSON)
+   - Player shares proof with friend/researcher/auditor
+   - External validator independently verifies proof
+3. **Feedback:**
+   - Proof verification succeeds → "This game was mathematically fair"
+   - Player gains confidence → "I can prove this was fair"
+4. **Completion:** Player becomes advocate (can recommend Mental to others with evidence)
+
+**Expectation:** Verification is easy, proofs are authentic, validation succeeds
+
+---
 
 **Single-Language Stack (C++ Everywhere)**
 
@@ -176,23 +320,6 @@ For players like Jordan who verify multiple games:
 - For researchers like Maya: examining the protocol, seeing cryptography at work
 - Make or break: Is the C++ code clean, auditable, and demonstrating the protocol correctly?
 - Success: Researcher can validate that the mental poker protocol is correctly implemented throughout the system
-
-### Experience Principles
-
-**1. Cryptography is Invisible During Play, Obvious Afterward**
-Players experience normal poker. The cryptographic protocol works silently in the background. But the proof is always accessible, always verifiable, never hidden or delayed. Simplicity during play, transparency after play.
-
-**2. The Protocol is the Product**
-Mental's competitive advantage isn't UI design or features—it's the cryptographic protocol that guarantees fairness. Every design decision should emphasize: "The protocol makes this fair." The UX should get out of the way so the mathematics can speak.
-
-**3. Single Language, Unified System**
-C++ throughout (backend, WebAssembly client, cryptographic core) means cleaner code, easier auditing, consistent protocol implementation, and a single source of truth for the mental poker algorithm.
-
-**4. Lobby First, Everything Else Second**
-The entry point is the lobby (available games). This is the gateway to everything. Make it clear, make it simple, make it inviting. Everything else flows from this first interaction.
-
-**5. Hand History is Always Available, Never Lost**
-Players own their proof. Hand histories persist indefinitely, are never deleted, are always downloadable. The proof of fairness belongs to the player, not locked in a database or behind a login.
 
 ---
 
@@ -497,41 +624,6 @@ Interactions:
   - State transitions: Minimal, prefer instant feedback
   - Responsive breakpoints: 320px (mobile), 768px (tablet), 1024px (desktop)
 ```
-
-### Core Components Strategy
-
-**Essential Components for MVP:**
-
-1. **Lobby View**
-   - Table list (responsive grid/table)
-   - Join button
-   - Table status indicators
-
-2. **Game View**
-   - Player areas (cards, stack, position)
-   - Community cards display
-   - Pot and action indicator
-   - Action buttons (fold, check, call, bet, raise)
-   - Game log/history
-
-3. **Proof/History View**
-   - Hand history display
-   - Download button
-   - Proof visualization (if applicable)
-
-4. **Base Components**
-   - Buttons (primary, secondary, disabled states)
-   - Card containers
-   - Text inputs (for player names, amounts)
-   - Status indicators (game state, connection status)
-   - Modals/dialogs (if needed for confirmations)
-
-**Component Documentation:**
-Each component documented with:
-- Usage example
-- Props specification
-- Accessibility notes
-- CSS utilities used
 
 ### Customization & Accessibility Strategy
 
@@ -1635,13 +1727,6 @@ Mental requires specialized components for the poker gameplay experience and cry
 - Proof moment: Center modal (full attention)
 - Form errors: Inline below field + red border
 - Download confirmation: Toast notification (bottom-right, auto-dismiss after 3s)
-
-**Consistency Rules:**
-- All errors are fixable or have recovery path
-- Color never sole indicator (always pair with icon + text)
-- Icons consistent across application
-- Messages are clear, action-oriented language
-- Technical errors translated to user-friendly explanations
 
 **Accessibility:**
 - Color contrast meets WCAG AA (4.5:1)
