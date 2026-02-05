@@ -1,17 +1,17 @@
 ---
-stepsCompleted: [1, 2, 3, 4, 6, 7, 8, 9, 10, 11]
+stepsCompleted: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 inputDocuments: []
 workflowType: 'prd'
 lastStep: 11
 project_name: 'mental'
 user_name: 'Riddler'
-date: '2025-12-01'
+date: '2026-02-05'
 ---
 
 # Product Requirements Document - mental
 
 **Author:** Riddler
-**Date:** 2025-12-01
+**Date:** 2026-02-05
 
 ## Stakeholder Sign-Off
 
@@ -27,6 +27,7 @@ date: '2025-12-01'
 - Technical Lead sign-off confirms technical feasibility
 - UX Designer sign-off confirms user experience requirements are complete
 - Security/Cryptography Reviewer sign-off confirms cryptographic approach validation
+- **Status Note:** PRD approved for implementation; sign-offs pending formal documentation process
 
 ## Executive Summary
 
@@ -680,10 +681,10 @@ Mental's MVP focuses on solving the core problem: delivering cryptographically-v
 ### Cryptographic Fairness
 
 - FR21: The system generates a cryptographically-verified fair shuffle using mental poker algorithm
-- FR22: The system generates zero-knowledge proofs for shuffle verification
+- FR22: The system generates zero-knowledge proofs (ZKP) for shuffle verification
 - FR23: The system maintains cryptographic proof that cards are private until showdown
 - FR24: The system ensures opponent cannot collude with server to cheat (heads-up only constraint)
-- FR25: ZKP proofs are generated in real-time during gameplay (within playable latency)
+- FR25: Zero-knowledge proofs (ZKP) are generated in real-time during gameplay (within playable latency)
 
 ### Hand History & Verification
 

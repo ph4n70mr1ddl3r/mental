@@ -6,13 +6,13 @@ workflowType: 'ux-design'
 lastStep: 13
 project_name: 'mental'
 user_name: 'Riddler'
-date: '2025-12-02'
+date: '2026-02-05'
 ---
 
 # UX Design Specification - mental
 
 **Author:** Riddler
-**Date:** 2025-12-02
+**Date:** 2026-02-05
 
 ---
 
@@ -61,7 +61,7 @@ Mental serves four distinct audiences with very different needs:
 The cryptography is Mental's competitive advantage, but it must remain *invisible* during play. Players shouldn't experience delays while ZKP proofs generate—poker rhythm matters. Yet after play, the cryptography needs to become *visible* and verifiable. Balancing these opposite requirements is a core UX challenge: transparent technology that doesn't interrupt flow.
 
 **2. Translating Complex Math into Concrete Trust**
-For Alex (casual player), "zero-knowledge proof" sounds academic and intimidating. The UX must communicate the emotional truth: *"I played poker and I have mathematical proof I wasn't cheated"*—in simple, tangible terms that don't require understanding the algorithm. The math is real, but the experience shouldn't feel theoretical.
+For Alex (casual player), "zero-knowledge proof (ZKP)" sounds academic and intimidating. The UX must communicate the emotional truth: *"I played poker and I have mathematical proof I wasn't cheated"*—in simple, tangible terms that don't require understanding the algorithm. The math is real, but the experience shouldn't feel theoretical.
 
 **3. Multi-Level UX for Different Audiences**
 Sam needs deployment documentation. Maya needs algorithm specifications. Alex needs simple poker. All using the same system. The UX must serve vastly different needs—from casual player to cryptography researcher—without confusion or bloat.
@@ -101,7 +101,7 @@ The experience follows this loop: **Lobby → Join → Play → Download Proof �
 Mental will use C++ as the unified language across the entire system:
 - **Backend:** C++ server implementing mental poker protocol and game logic
 - **Client:** C++ compiled to WebAssembly for browser execution
-- **Cryptographic computation:** Heavy cryptographic operations run in WebAssembly (C++) for performance, with JavaScript orchestrating the UI and player interaction
+- **Cryptographic computation:** Heavy cryptographic operations run in WebAssembly (C++) for performance
 
 This single-language approach simplifies development, auditing, and allows alternative client builders to work from a unified codebase. The C++ backend and C++ WebAssembly client speak the same protocol language, with the browser as the delivery mechanism.
 
@@ -438,41 +438,41 @@ This means:
 
 ### Design System Choice
 
-**Tailwind CSS + Custom Components**
+**Minimal CSS + Custom C++/JavaScript Components**
 
-Mental's design system prioritizes simplicity, transparency, and performance. Rather than adopting a comprehensive component library, we use Tailwind CSS utilities to build custom components that match Mental's minimalist philosophy and integrate cleanly with the C++ WebAssembly architecture.
+Mental's design system prioritizes simplicity, transparency, and performance. Using a minimal CSS approach with custom C++ WebAssembly components and lightweight JavaScript DOM manipulation matches Mental's minimalist philosophy and integrates cleanly with the full C++ architecture.
 
 ### Rationale for Selection
 
 **1. Speed & Simplicity**
-Tailwind's utility-first approach allows rapid development without the overhead of pre-built component libraries. This matches Mental's core principle: do one thing (fair poker) exceptionally well, with minimal UI complexity.
+Minimal CSS and lightweight JavaScript allow rapid development without the overhead of pre-built component libraries or heavy frameworks. This matches Mental's core principle: do one thing (fair poker) exceptionally well, with minimal UI complexity.
 
 **2. C++ WebAssembly Integration**
 Minimal JavaScript dependencies mean cleaner integration with the WebAssembly cryptographic core. No heavy component frameworks interfering with high-performance proof generation and verification.
 
 **3. Transparency & Auditability**
-Custom components using Tailwind utilities are straightforward and auditable. The code is clear, with no "magic" or hidden complexity—important when researchers like Maya are reviewing the entire system.
+Custom components with minimal dependencies are straightforward and auditable. The code is clear, with no "magic" or hidden complexity—important when researchers like Maya are reviewing the entire system.
 
 **4. Performance**
-Tailwind's tree-shaking and minimal runtime overhead keep the WebAssembly client lean and fast. No bloated component libraries slowing down real-time gameplay.
+Minimal CSS and JavaScript keep the WebAssembly client lean and fast. No bloated component libraries or heavy frameworks slowing down real-time gameplay.
 
 **5. Alignment with Open-Source Philosophy**
-Custom components are easy for alternative client builders to understand and adapt. The design system itself becomes part of the open-source specification that developers can implement in other languages/frameworks.
+Custom components are easy for alternative client builders to understand and adapt. The design system itself becomes part of the open-source specification that developers can implement in C++ and other languages.
 
 ### Implementation Approach
 
-**Frontend Framework:** React (or equivalent) for component composition and state management
+**Frontend Framework:** Minimal JavaScript for DOM manipulation and WebAssembly integration
 
 **Styling Foundation:**
-- Tailwind CSS for all utility classes
-- PostCSS for processing and optimization
-- Custom CSS only when Tailwind utilities insufficient
+- Minimal CSS for layout and basic styling
+- Custom CSS optimized for WebAssembly rendering
+- Accessible semantic HTML as foundation
 
 **Component Architecture:**
-- Functional React components
-- Props-based customization
+- Lightweight JavaScript components wrapping C++ WebAssembly modules
+- Props-based data flow
 - Accessible semantic HTML as foundation
-- Tailwind utilities for styling
+- Minimal styling focused on performance
 
 **Design Tokens (Mental Brand):**
 
@@ -489,13 +489,13 @@ Typography:
   - Monospace: Code font (for proofs, technical data)
 
 Spacing:
-  - Base unit: 4px (Tailwind default)
+  - Base unit: 4px
   - Standard gaps: 8px, 16px, 24px, 32px
 
 Interactions:
   - Button hover: Subtle color shift, no animation overhead
   - State transitions: Minimal, prefer instant feedback
-  - Responsive breakpoints: Tailwind defaults (sm, md, lg, xl)
+  - Responsive breakpoints: 320px (mobile), 768px (tablet), 1024px (desktop)
 ```
 
 ### Core Components Strategy
