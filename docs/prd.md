@@ -372,6 +372,7 @@ Mental is an API Backend system that exposes cryptographic game protocol endpoin
 - Each session generates a unique session_token for the duration of the table
 - No login, no accounts, no password
 - No player data persists after session ends
+- Player names are user-provided display names only, with no requirement for uniqueness across sessions or tables
 
 **Session Constraints:**
 - Session token valid only for the current table
@@ -693,7 +694,7 @@ Mental's MVP focuses on solving the core problem: delivering cryptographically-v
 - FR28: Hand history includes final hand outcomes and card reveals
 - FR29: Hand history includes embedded cryptographic proofs in format matching mental poker literature
 - FR30: Hand history is downloadable in JSON format for external analysis
-- FR31: Hand histories are persistent (retrievable days/weeks/months after play)
+- FR31: Hand histories are persistent indefinitely (retrievable at any time after play)
 - FR32: Hand history proofs can be independently verified by external tools
 
 ### Authentication & Player Identification

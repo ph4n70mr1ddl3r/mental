@@ -438,7 +438,7 @@ This means:
 
 ### Design System Choice
 
-**Minimal CSS + Custom C++/JavaScript Components**
+**Minimal CSS + Custom JavaScript Components Wrapping C++ WebAssembly**
 
 Mental's design system prioritizes simplicity, transparency, and performance. Using a minimal CSS approach with custom C++ WebAssembly components and lightweight JavaScript DOM manipulation matches Mental's minimalist philosophy and integrates cleanly with the full C++ architecture.
 
@@ -1238,7 +1238,7 @@ This direction leverages the design system foundation established earlier:
 
 ### Design System Components
 
-Our chosen design system (Tailwind CSS) provides a robust foundation of components:
+Our minimal CSS approach provides a robust foundation of components:
 - Buttons in multiple styles and sizes
 - Input fields and form elements
 - Card and container primitives
@@ -1448,8 +1448,8 @@ Mental requires specialized components for the poker gameplay experience and cry
 ### Component Implementation Strategy
 
 **Architecture:**
-- Components built in React (or equivalent framework)
-- State management through props (dumb components)
+- Components built as custom JavaScript wrappers around C++ WebAssembly modules
+- State management through WebAssembly memory interface and props
 - Game logic lives in parent container
 - Each component has clear responsibilities
 
@@ -1515,6 +1515,8 @@ Mental requires specialized components for the poker gameplay experience and cry
 - Phase 1: 2-3 weeks (core gameplay, proof moment)
 - Phase 2: 1-2 weeks (supporting features)
 - Phase 3: 1-2 weeks (polish, optional enhancements)
+
+**Note:** These estimates are for UX implementation only. Overall project timeline is 8-12 weeks including backend development, integration, and testing as specified in the PRD.
 
 ---
 
