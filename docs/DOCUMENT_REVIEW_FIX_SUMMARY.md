@@ -20,8 +20,13 @@
 | File | Line | Original | Fixed |
 |------|------|----------|--------|
 | ux-design-specification.md | 441 | Minimal CSS + Custom C++/JavaScript Components | Minimal CSS + Custom JavaScript Components Wrapping C++ WebAssembly |
+| ux-design-specification.md | 534 | Tailwind utilities used | CSS utilities used |
+| ux-design-specification.md | 549 | Flexible layouts using Tailwind grid/flexbox | Flexible layouts using CSS grid/flexbox |
+| ux-design-specification.md | 822 | Spacing Unit: 4px Base (Tailwind default) | Spacing Unit: 4px Base (industry standard) |
 | ux-design-specification.md | 1241 | Our chosen design system (Tailwind CSS) | Our minimal CSS approach |
+| ux-design-specification.md | 1255 | built using Tailwind's design tokens | built using our minimal CSS design system |
 | ux-design-specification.md | 1451 | Components built in React (or equivalent framework) | Components built as custom JavaScript wrappers around C++ WebAssembly modules |
+| ux-design-specification.md | 1457 | All components use Tailwind color tokens: | All components use our color palette: |
 
 **Decision:** Aligned with PRD's C++ WebAssembly approach. Removed all references to React and Tailwind CSS that conflicted with the established technology stack.
 
@@ -35,7 +40,7 @@
 
 | File | Line | Original | Fixed |
 |------|------|----------|--------|
-| prd.md | 696 | Hand histories are persistent (retrievable days/weeks/months after play) | Hand histories are persistent indefinitely (retrievable at any time after play) |
+| prd.md | 697 | Hand histories are persistent indefinitely (retrievable at any time after play) | (already correct) |
 
 **Decision:** Changed to "indefinitely" as it makes more sense for a fairness verification system.
 
@@ -89,10 +94,10 @@
 
 ## Summary
 
-**Critical Fixes Completed:** 4
-**High Priority Fixes Completed:** 2
+**Critical Fixes Completed:** 5 (all Tailwind/React references removed)
+**High Priority Fixes Completed:** 2 (player identification and timeline clarification)
 **Medium Priority Fixes Completed:** 1
-**Deferrred (Requires Larger Restructuring):** 6
+**Deferred (Requires Larger Restructuring):** 6
 
 **Implementation Readiness:** ✅ **READY TO PROCEED**
 
@@ -104,8 +109,8 @@ Remaining redundancies can be addressed in future document cleanup cycles withou
 
 ## Files Modified
 
-1. `/home/riddler/mental/docs/prd.md` - 2 edits
-2. `/home/riddler/mental/docs/ux-design-specification.md` - 4 edits
+1. `/home/riddler/mental/docs/prd.md` - 1 edit (line 375: added player identification clarification)
+2. `/home/riddler/mental/docs/ux-design-specification.md` - 8 edits (removed all Tailwind/React references)
 
 ## Files Created
 

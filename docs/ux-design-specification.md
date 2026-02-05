@@ -531,7 +531,7 @@ Each component documented with:
 - Usage example
 - Props specification
 - Accessibility notes
-- Tailwind utilities used
+- CSS utilities used
 
 ### Customization & Accessibility Strategy
 
@@ -546,7 +546,7 @@ Each component documented with:
 - Mobile-first approach
 - Works on: phones (iOS/Android browsers), tablets, desktops
 - Touch-friendly button sizes (48px minimum targets)
-- Flexible layouts using Tailwind grid/flexbox
+- Flexible layouts using CSS grid/flexbox
 
 **Design System as Specification:**
 - Component library documented in code
@@ -819,7 +819,7 @@ Small: 12px / 16px - Helper text, captions, metadata
 
 ### Spacing & Layout Foundation
 
-**Spacing Unit: 4px Base (Tailwind default)**
+**Spacing Unit: 4px Base (industry standard)**
 
 Standard spacing intervals:
 - **4px:** Tight spacing (icon-to-text gaps)
@@ -1252,7 +1252,7 @@ These foundation components handle the baseline UI needs and ensure consistency 
 
 ### Custom Components
 
-Mental requires specialized components for the poker gameplay experience and cryptographic proof verification. These custom components are built using Tailwind's design tokens but implement domain-specific logic:
+Mental requires specialized components for the poker gameplay experience and cryptographic proof verification. These custom components are built using our minimal CSS design system and implement domain-specific logic:
 
 #### 1. Table Component
 
@@ -1454,7 +1454,7 @@ Mental requires specialized components for the poker gameplay experience and cry
 - Each component has clear responsibilities
 
 **Design System Integration:**
-- All components use Tailwind color tokens:
+- All components use our color palette:
   - Deep Blue (#1F3A93) for primary actions and highlights
   - Success Green (#059669) for verification and success states
   - Alert Orange (#D97706) for warnings and attention
