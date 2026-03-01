@@ -20,9 +20,9 @@ This directory contains all project documentation for the Mental poker training 
 
 ## Key Technologies
 
-- **Frontend:** C++ WebAssembly with minimal CSS/JS
-- **Backend:** Node.js with SQLite
-- **AI:** Local LLM (Ollama) with offline-first architecture
+- **Backend:** C++ server implementing mental poker protocol
+- **Frontend:** C++ WebAssembly client with minimal CSS/JS
+- **Protocol:** Mental poker algorithm with ZKP proof generation
 
 ## Getting Started
 
