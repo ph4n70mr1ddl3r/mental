@@ -1084,6 +1084,52 @@ This direction leverages the design system foundation established earlier:
 - Hand histories auto-persisted
 - Graceful error handling
 
+### Journey 4: Maya Patel - The Cryptographic Researcher (Validator Experience)
+
+**Overview:** Maya is a cryptography researcher who validates Mental's implementation by auditing the code and analyzing proofs mathematically, publishing validation reports that become authoritative references.
+
+**Key Stages:**
+
+**1. Code Review (Deep Technical Analysis)**
+- Clones open-source repository from GitHub
+- Reviews C++ mental poker implementation
+- Examines cryptographic proof generation logic
+- Verifies algorithm matches peer-reviewed papers
+- Documents findings in technical review
+
+**2. Proof Analysis (Mathematical Validation)**
+- Downloads multiple hand histories with embedded proofs
+- Analyzes proof format against mental poker literature
+- Verifies shuffle fairness mathematically
+- Tests edge cases and boundary conditions
+- Confirms cryptographic soundness
+
+**3. Publication (Authority Building)**
+- Publishes technical validation report
+- Report becomes authoritative reference for community
+- New players trust Maya's independent verification
+- "See Maya's validation report" becomes standard answer
+
+**4. Ongoing Monitoring (Community Trust)**
+- Reviews new versions as released
+- Validates security patches
+- Maintains public verification status
+- Community relies on continued oversight
+
+**Success Metrics for Maya's Journey:**
+- ✅ Code Access: Open-source, well-documented C++ implementation
+- ✅ Auditability: Clear algorithm implementation matching literature
+- ✅ Proof Format: Standard format enabling external verification
+- ✅ Publication: Platform enables public validation reports
+- ✅ Authority: Researcher becomes trusted validator
+
+**Key Design Elements:**
+- Clean, auditable C++ source code
+- Comprehensive technical documentation
+- Hand history format supporting detailed cryptographic analysis
+- Clear mental poker protocol specification
+- Performance characteristics and security properties documented
+
 ---
 
 ## Journey Design Patterns
@@ -1687,7 +1733,7 @@ Full screen for game (no competing content):
 - Buttons below cards/table
 - No top nav bar during active play
 
-Lobby as scroll-able list:
+Lobby as scrollable list:
 - Games as cards in vertical list
 - Join button on each card
 - Filter/search at top

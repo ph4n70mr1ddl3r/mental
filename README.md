@@ -25,7 +25,8 @@ See [docs/README.md](docs/README.md) for complete documentation including:
 
 - [Product Requirements Document](docs/prd.md)
 - [UX Design Specification](docs/ux-design-specification.md)
-- [Validation Reports](docs/)
+- [PRD Validation Report](docs/prd-validation-report.md)
+- [UX Design Validation Report](docs/ux-design-validation-report.md)
 
 ## Project Status
 
