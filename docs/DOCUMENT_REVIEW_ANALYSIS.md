@@ -1,3 +1,13 @@
+---
+review_type: inconsistency-analysis
+documents:
+  - /home/riddler/mental/docs/prd.md
+  - /home/riddler/mental/docs/ux-design-specification.md
+  - /home/riddler/mental/docs/prd-validation-report.md
+  - /home/riddler/mental/docs/ux-design-validation-report.md
+date: 2026-02-05
+---
+
 # Document Review Analysis Report - mental
 
 **Date:** February 5, 2026

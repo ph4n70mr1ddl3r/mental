@@ -1,3 +1,9 @@
+---
+document: /home/riddler/mental/docs/ux-design-specification.md
+checklist: /home/riddler/mental/.bmad/bmm/workflows/2-plan-workflows/create-ux-design/checklist.md
+date: 2026-02-05
+---
+
 # UX Design Validation Report - mental
 
 **Document Being Validated:** `/home/riddler/mental/docs/ux-design-specification.md`
